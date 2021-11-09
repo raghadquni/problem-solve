@@ -36,8 +36,8 @@ function isPalindrome(i)
 
 
 ///////////////////////////////////// problem 3 (who is Online?) /////////////////////////////////////
-
-  const friends = [{
+/*
+const friends = [{
     username: 'David',
     status: 'online',
     lastActivity: 10
@@ -68,23 +68,23 @@ function isPalindrome(i)
         status.away = away;
       }
     });
-    return status;
+   return status;
   }
+*/
+///////////////////////////////////// problem 4 (makeNewString *slice) /////////////////////////////////////
+/* 
+  problem 4:
+  Write a JavaScript program to create a new string from a given string taking 
+  the first 3 characters and the last 3 characters of a string and adding them together. 
+  The string length must be 3 or more, if not, the original string is returned. */
 
-  
+const makeNewString = (str) => {
+  if(str.length <= 3) {
+  return str;
+ } else {
+  return(str.slice(0 , 3) + str.slice(-3))
+ }
+} // 50%
 
-let people = [{
-  name: 'name', age: 20
-}];
 
-  function above24(object) {
-    const people = {}
-
-     for(i = 0 ;i < object.length-1; i++) {
-       if(array[i].age >= 24)
-      people.push(array[i])
-    }
-        return people;
-      }
-    
-  // console.log((people));
+///////////////////////////////////// problem 5 /////////////////////////////////////
