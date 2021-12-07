@@ -9,7 +9,13 @@ Write a function named raisedToTheThird that takes in an array of numbers and re
 ------------------------------------------------------------------------------------------------ */
 
 const raisedToTheThird = (arr) => {
-  // Solution code here...
+  // 1 - returns a new array
+  const arr2 = []
+  // 2 - Use forEach to raised number to the 3rd power
+  arr.forEach((num) => {
+    arr2.push(Math.pow(num, 3))
+  });
+  return arr2;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -20,7 +26,9 @@ Write a function that appends ' The end.' to a string, and returns the modified 
 ------------------------------------------------------------------------------------------------ */
 
 const appendTheEnd = (str) => {
-  // Solution code here...
+  // 1 - returns the modified string without original source string modified.
+  const str2 = `${str} The end.`;
+  return str2;
 };
 
 /* ------------------------------------------------------------------------------------------------

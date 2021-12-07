@@ -29,7 +29,15 @@ Use `forEach` to loop over the input array. Modify each string, and add the upda
 ------------------------------------------------------------------------------------------------ */
 
 const addExclamation = (arr) => {
-  // Solution code here...
+  // 1 - returns a new array of the same strings
+  const stringArray = []
+  // 2 - Use `forEach` to loop over the input array 
+  arr.forEach((str) => {
+  // 3 - and add the updated value into a local array.
+  stringArray.push(str + "!")
+  })
+  // 4 - Return the local array;
+  return stringArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -41,8 +49,17 @@ Use `forEach` to loop over the input array. The modified strings should each be 
 ------------------------------------------------------------------------------------------------ */
 
 const allUpperCase = (arr) => {
-  // Solution code here...
-};
+    // 1 - returns a new array of the same strings
+    const stringArray = []
+    // 2 - Use `forEach` to loop over the input array 
+    arr.forEach((str) => {
+    // 3 - and converted to upper case.
+    stringArray.push(str.toUpperCase())
+    // stringArray.toUpperCase()
+    })
+    // 4 - Return the local array;
+    return stringArray;
+  };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -79,7 +96,8 @@ Return the modified array.
 ------------------------------------------------------------------------------------------------ */
 
 const addValues = (arr, value) => {
-  // Solution code here...
+  // 1 - pushes the value into the array.
+  arr.push(value);
 };
 
 const addNumbers = (num, arr, times, cb) => {
@@ -123,7 +141,19 @@ Return the resulting output array.
 ------------------------------------------------------------------------------------------------ */
 
 const fizzbuzz = (arr) => {
-  // Solution code here...
+  const numbers = [];
+  arr.forEach((num) => {
+    if (num % 3 === 0 && num % 5 === 0) {
+      numbers.push("Fizz Buzz");
+    } else if(num % 3 === 0) {
+      numbers.push("Fizz");
+    } else if(num % 5 === 0) {
+      numbers.push("Buzz");
+    } else {
+      numbers.push(num);
+    }
+  });
+  return numbers;
 };
 
 /* ------------------------------------------------------------------------------------------------
