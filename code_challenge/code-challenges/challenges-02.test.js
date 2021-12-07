@@ -45,7 +45,12 @@ console.log(a) prints [1, 2, 3, 1]
 ------------------------------------------------------------------------------------------------ */
 
 const appendFirstToLast = (arr) => {
-  // Solution code here...
+  // 1 - copies the first element
+  let arr2 = arr[0];
+  // 2 - push element to the end of the array.
+  arr.push(arr2); // end arr
+  // 3 - same arr Array
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -63,8 +68,10 @@ addBirthYearProperty(octavia, 1947);
 console.log(a) prints { fullName: 'Octavia Estelle Butler', yearBorn: 1947 }
 ------------------------------------------------------------------------------------------------ */
 
-const addBirthYearProperty = (obj, year) => {
-  // Solution code here...
+const addBirthYearProperty = (obj, year) => { // year is integer
+  // 1 - get yearBorn from object 
+  obj.yearBorn = year
+  // 2 - we dont ueed to use return >> (Do not use a return statement.)
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -81,7 +88,12 @@ console.log(people[1].isAuthor) prints true
 ------------------------------------------------------------------------------------------------ */
 
 const setStatusAsAuthor = (people) => {
-  // Solution code here...
+  // 1 - map() for people objects to Change each object in array
+  people.map((element) => {
+  // 2 - adds a new property called isAuthor
+    element.isAuthor = true;
+  // 3 - we dont ueed to use return >> (Do not use a return statement.)
+  })
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -100,7 +112,10 @@ console.log(a) prints [1, 2, 3, 4]
 ------------------------------------------------------------------------------------------------ */
 
 const append = (arr1, arr2) => {
-  // Solution code here...
+  // 1 - forEach for second array to append it to first array
+  arr2.forEach((nums) => {
+    arr1.push(nums)
+  })
 };
 
 /* ------------------------------------------------------------------------------------------------
