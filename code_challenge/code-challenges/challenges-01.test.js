@@ -72,11 +72,20 @@ Use `forEach` to build a new array of strings, each string modified by the callb
 ------------------------------------------------------------------------------------------------ */
 
 const greeting = (word) => {
-  // Solution code here...
-};
+  // 1 - returns the string in all uppercase letters, and followed by an "!".
+  const Upperletters = `${word.toUpperCase()}!`
+    return Upperletters
+  };
+
 
 const speaker = (words, cb) => {
-  // Solution code here...
+  // 2 - takes in an array of strings and a callback function. Use `forEach`
+  const arr2 = [];
+  words.forEach((ele) => {
+    arr2.push(cb(ele));
+  });
+  // 3 - Return the new array.
+  return arr2;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -101,7 +110,11 @@ const addValues = (arr, value) => {
 };
 
 const addNumbers = (num, arr, times, cb) => {
-  // Solution code here...
+  // 2 - invoke the callback function as many time (for)
+  for (let i = 0; i < times; i++) {
+    cb(arr, num);
+  }
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -123,7 +136,16 @@ This function should use forEach to populate your grocery list based on the stor
 ------------------------------------------------------------------------------------------------ */
 
 const createList = (availableItems) => {
-  // Solution code here...
+  // 1 - use forEach to populate your grocery list based on the store's inventory.
+  const arr2 = [];
+  availableItems.forEach((item) => {
+  // 2 - If the item is available
+  if (item.available)
+  // 3 - add it to your list
+  arr2.push(item.name);
+  })
+  // 4 - Return the final list.
+  return arr2;
 };
 
 /* ------------------------------------------------------------------------------------------------
