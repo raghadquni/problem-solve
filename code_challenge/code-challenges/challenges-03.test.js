@@ -99,7 +99,8 @@ Here is an example of the input:
 ------------------------------------------------------------------------------------------------ */
 
 const sortByPrice = (arr) => {
-  // Solution code here...
+  // 1 - sorts those objects by price, lowest to highest, returning the same array.
+  return arr.sort((a,r) => a.price - r.price)
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -111,7 +112,13 @@ For example, ['Alphabet', 'alphabet', 'carrot', 'Zebra'] is correctly sorted, an
 ------------------------------------------------------------------------------------------------ */
 
 const alphabetizeBetter = (arr) => {
-  // Solution code here...
+
+  // 1 - takes in an array of strings and returns the same array
+  // 2 - with the strings sorted alphabetically.
+  return arr.sort((a,r) => {
+  // 3 - Capitalization should not change the sort order of two strings.
+  return a.toLowerCase().localeCompare(r.toLowerCase())
+})
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -121,7 +128,11 @@ Write a function named sortByLength that takes in an array of strings and return
 ------------------------------------------------------------------------------------------------ */
 
 const sortByLength = (arr) => {
-  // Solution code here...
+  // 1 - takes in an array of strings and returns the same array
+  return arr.sort((a,r) => {
+  // 2 - with the strings sorted by their length, lowest to highest.
+    return a.length - r.length
+  })
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -155,8 +166,11 @@ const people = [
 ];
 
 const sortPeople = (arr) => {
-  // Solution code here...
-};
+  // 1 - takes in an array of Person objects
+  return arr.sort((a,r) => (
+    a.lastName < r.lastName ? -1 : 0
+  )
+)};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 11 - Stretch Goal
@@ -169,7 +183,20 @@ If two people have the same full name, the younger one should come first. Do not
 ------------------------------------------------------------------------------------------------ */
 
 const sortPeopleBetter = (arr) => {
-  // Solution code here...
+  // 1 - takes in an array of Person objects
+  return arr.sort((a,r) => {
+    // 3 - If two people share the same last name.
+    if (a.lastName === r.lastName) {
+      if (a.firstName === r.firstName) {
+        return a.age - r.age;
+      }
+      
+    return a.firstName > r.firstName ? 0 : -1;
+    } else {
+    // 2 - sorts those people by their last names.
+    return a.lastName > r.lastName ? 0 : -1;
+    }
+  })
 };
 
 /* ------------------------------------------------------------------------------------------------
