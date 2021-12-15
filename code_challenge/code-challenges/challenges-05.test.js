@@ -25,7 +25,7 @@ let starWarsPeople = [
 ];
 
 const sortStarWarsCharacters = (starWarsArr) => {
-  // Solution code here...
+  return starWarsArr.sort((a, r) => r.height - a.height);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -35,7 +35,8 @@ Write a function named removeThree that takes an index and an array. The functio
 ------------------------------------------------------------------------------------------------ */
 
 const removeThree = (idx, arr) => {
-  // Solution code here...
+  arr.splice(idx, 3);
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -45,7 +46,7 @@ Write a function named joinArray that takes an array and joins all of the elemen
 ------------------------------------------------------------------------------------------------ */
 
 const joinArray = (arr) => {
-  // Solution code here...
+  return arr.join(" ")
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -75,7 +76,7 @@ For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 ------------------------------------------------------------------------------------------------ */
 
 const wordsToCharList = (arr) => {
-  // Solution code here...
+  return arr.split("");
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -148,7 +149,12 @@ Return a new array containing just the verbs. For example, ['Mix until evenly di
 
 const stepActions = (recipe) => {
   let result = [];
-  // Solution code here...
+  result = recipe.steps.map((step) => {
+    return step.split(" ")[0];
+  });
+
+  return result;
+  
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -165,8 +171,8 @@ For example:
 ------------------------------------------------------------------------------------------------ */
 
 const removeEvenValues = (arr) => {
-  // Solution code here...
-};
+  
+}
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 10 - Stretch Goal
