@@ -7,7 +7,14 @@ Write a function called addTwo that takes in an array and adds two to every valu
 ------------------------------------------------------------------------------------------------ */
 
 const addTwo = (arr) => {
-  // Solution code here...
+  // 2 - new array for new value.
+  const arr2 = [];
+  // 1 - adds two to every value using a for loop.
+  for (let i = 0; i < arr.length; i++) {
+    arr2[i] = arr[i] + 2;
+  }
+  // 3 - Return the new array.
+  return arr2;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -18,7 +25,8 @@ Write a function named containsW that takes in a string. This function should us
 ------------------------------------------------------------------------------------------------ */
 
 const containsW = (str) => {
-  // Solution code here...
+  if(str.match(/w/)) return true
+  return false
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -45,7 +53,8 @@ Write a function named containsWorld that takes in a string or number of any len
 ------------------------------------------------------------------------------------------------ */
 
 const containsWorld = (input) => {
-  // Solution code here...
+  if(input.match(/world/)) return true
+  return false
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -57,8 +66,9 @@ Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
 const isCapitalized = (str) => {
-  // Solution code here...
-};
+  // if(str.match(/\b[A-Z].*?\b/g)
+   
+  };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -66,7 +76,13 @@ CHALLENGE 6
 Write a function named citiesAtoJ that takes in an array of city names and uses a regular expression pattern to return a new array containing any cities that begin with the letters A through J, inclusive.
 ------------------------------------------------------------------------------------------------ */
 const citiesAtoJ = (arr) => {
-  // Solution code here...
+  const arr2 = [];
+  const AthroughJ = /^[A-J]/;
+  arr.forEach((cities) => {
+    if(AthroughJ.test(cities))
+    arr2.push(cities)
+  })
+  return arr2;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -82,8 +98,8 @@ Do not use the vertical bar (pipe) in your pattern.
 ------------------------------------------------------------------------------------------------ */
 
 const matchMonth = (input) => {
-  // Solution code here...
-};
+  if (input.toString().match(/\b(October|Oct|october|oct)\b/g)) return true;
+  return false;};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8 - Stretch Goal
