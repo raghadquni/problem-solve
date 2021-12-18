@@ -64,7 +64,11 @@ For example, if the input is 'Welcome', the output will be:
 
 const howMuchPencil = (str) => {
   let result = [];
-  // Solution code here...
+  for(let i = 0; i <= str.length; i++) {
+    let str2 = str.slice(i);
+    result.push(str2)
+  }
+  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -172,7 +176,8 @@ For example:
 
 const removeEvenValues = (arr) => {
   
-}
+ 
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 10 - Stretch Goal
@@ -190,7 +195,7 @@ removeLastCharacters('Gregor', 9) returns ''
 ------------------------------------------------------------------------------------------------ */
 
 const removeLastCharacters = (str, numberOfCharacters) => {
-  // Solution code here...
+  return str.slice(0, str.length - numberOfCharacters);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -201,7 +206,12 @@ Write a function named totalSumCSV that, given a string of comma-separated value
 
 const totalSumCSV = (str) => {
   let total = 0;
-  // Solution code here...
+  const arr2 = str.split(",");
+
+  arr2.forEach((num) => {
+    total += Number(num)
+  })
+  return total;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -213,7 +223,7 @@ For example, removeVowels('gregor') returns 'grgr'.
 ------------------------------------------------------------------------------------------------ */
 
 const removeVowels = (str) => {
-  // Solution code here...
+  return str.replace(/[aeiou]/gi, "");
 };
 
 /* ------------------------------------------------------------------------------------------------

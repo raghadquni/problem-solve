@@ -122,7 +122,10 @@ HR has asked you to change the data to make it easier to print so that it looks 
 
 const updateNumbers = (obj) => {
 	const arr = []
-
+	for(const [key, value] of Object.entries(obj)) {
+	arr.push(`${key}: ${value}`);
+	}
+	return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -152,7 +155,11 @@ hasChildrenValues(characters, 'Sansa') will return false
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenValues = (arr, character) => {
-	// Solution code here...
+	const arr2 = arr.filter(child => child.name == character)
+		if(arr2.length == 0) {
+			return false
+		}
+		return true
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -174,8 +181,7 @@ Write a function named totalCharacters that takes in an array and returns the nu
 ------------------------------------------------------------------------------------------------ */
 
 const totalCharacters = (arr) => {
-	// Solution code here...
-};
+}
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 9 - Stretch Goal
