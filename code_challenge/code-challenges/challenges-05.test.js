@@ -175,7 +175,8 @@ For example:
 ------------------------------------------------------------------------------------------------ */
 
 const removeEvenValues = (arr) => {
-  
+  const arr2 = arr.filter((ele) => ele % 2 === 1)
+  return arr2
  
 };
 

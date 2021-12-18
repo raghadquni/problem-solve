@@ -23,9 +23,10 @@ function lower(str) {
 
 const updateAnimal = (arr, callback) => {
   const arr2 = []
-  arr.map((callback) => {
-
-  });
+  arr.map(ele => {
+    arr2.push(callback(ele))
+  })
+  return arr2
 
 };
 
@@ -248,7 +249,7 @@ You DO NOT need to use your solution to Challenge 9 in completing Challenge 10.
 ------------------------------------------------------------------------------------------------ */
 
 const sortSchedule = (arr) => {
- return sortMeetingsByDay(arr).sort((a,r) => {
+ return arr.sort((a,r) => {
    
  })
 };

@@ -19,7 +19,9 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['t', 
 ------------------------------------------------------------------------------------------------ */
 
 const firstLetters = (arr) => {
-  // Solution code here...
+  return arr.map((letter) => {
+    return letter.slice(0,1)
+  })
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -31,7 +33,9 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['this
 ------------------------------------------------------------------------------------------------ */
 
 const findHappiness = (arr) => {
-  // Solution code here...
+  return arr.filter((str) => {
+    return str.includes(":)")
+  })
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -75,7 +79,9 @@ Write a function named findAnything that takes in an array of strings, along wit
 ------------------------------------------------------------------------------------------------ */
 
 const findAnything = (arr, target) => {
-  // Solution code here...
+  return arr.filter(ele => 
+    ele.includes(target)
+  )
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -85,7 +91,10 @@ Write a function named findEvery that takes in an array of strings, along with a
 ------------------------------------------------------------------------------------------------ */
 
 const findEvery = (arr, target) => {
-  // Solution code here...
+  const res = arr.filter(ele => 
+    ele.includes(target))
+    return res.length === arr.length
+  
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -101,7 +110,9 @@ For example, [['Brook Testing', 'Actual Person'], ['Human Person', 'Brook again'
 ------------------------------------------------------------------------------------------------ */
 
 const unenrollBrook = (arr) => {
-  // Solution code here...
+  return arr.map((ele) => {
+    return ele.filter((name) => !name.includes("Brook"))
+  })
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -136,7 +147,7 @@ const daysOfWeek = [
 ];
 
 const sortByDay = (arr) => {
-  // Solution code here...
+  
 };
 
 /* ------------------------------------------------------------------------------------------------
