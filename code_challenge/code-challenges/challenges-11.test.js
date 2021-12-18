@@ -12,7 +12,11 @@ Note the space in between first and last names.
 You can assume that neither firstName nor lastName will be blank
 ------------------------------------------------------------------------------------------------ */
 const toLastNames = (people) => {
-  // Solution code here...
+  let arr2 = []
+  people.map((peop) => {
+    arr2.push(`${peop.firstName} ${peop.lastName}`)
+  })
+  return arr2
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -24,7 +28,7 @@ If the PIN is four numerical digits long, return true. Otherwise, return false.
 ------------------------------------------------------------------------------------------------ */
 
 const validatePin = (pin) => {
-  // Solution code here...
+  return /^(\d{4}|\d{6})$/.test(pin);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -36,8 +40,12 @@ If the word is between 5 and 10 characters long, return true. Otherwise, return 
 ------------------------------------------------------------------------------------------------ */
 
 const validateWord = (word) => {
-  // Solution code here...
-};
+  if(word.toString().match(/^[A-Za-z]{5,10}$/gi))
+    return true;
+
+    return false;
+
+}
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -48,7 +56,10 @@ If it does, return true. If not, return false.
 ------------------------------------------------------------------------------------------------ */
 
 const hasNumber = (string) => {
-  // Solution code here...
+  if(string.toString().match(/[a-z][0-9]/gi))
+  return true;
+
+    return false;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -68,7 +79,13 @@ Note: if you ever need to validate an email using a regex in practice, the Inter
 ------------------------------------------------------------------------------------------------ */
 
 const validateEmail = (email) => {
-  // Solution code here...
+   if (email.match(/^(?!(.*\.){N+1})(.*\.){3}.*$/gim)) {
+    return false;
+  }
+
+  if(email.match(/[a-z]+([.]?[a-z])*@([a-z]+\.)*(com|org|net)\b/gi))
+  return true;
+  return false;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -77,15 +94,15 @@ CHALLENGE 6
 Write a function named validatePhoneNumber that accepts a phone number and determines if it is valid.
 
 Acceptable formats include:
- - (555) 555-5555
- - (555)555 5555
+ - (555) 555-5555 
+ - (555)555 5555 
  - 555 555-5555
  - 555-5555555
  - 555-555 5555
- - 555-555-5555
+ - 555-555-5555 
  - 555 555 5555
  - 555555-5555
- - 5555555555
+ - 5555555555 
 
 Your function should include a single regular expression pattern that matches any of these formats.
 
@@ -93,8 +110,12 @@ Return either true or false.
 ------------------------------------------------------------------------------------------------ */
 
 const validatePhoneNumber = (phoneNumber) => {
-  // Solution code here...
-};
+  let phone = /^(\(\d{3}\)(\s\d{3}-\d{4}|\d{3}\s\d{4})|\d{3}\s(\d{3}-\d{4}|\d{3}\s\d{4})|\d{3}-(\d{7}|\d{3}\s\d{4}|\d{3}-\d{4})|\d{6}-\d{4}|\d{10}|\d{3}\s\d{7})$/g
+  if(phoneNumber.match(phone)) 
+    return true;
+
+    return false;
+}
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal

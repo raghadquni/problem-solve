@@ -55,7 +55,12 @@ let characters = [
 ];
 
 const sortByChildren = (charArray) => {
-	// Solution code here...
+	return charArray.sort((a, r) => {
+		if (a.children.length == r.children.length) {
+		  return a.house - r.house;
+		}
+		return a.children.length - r.children.length;
+	  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -80,8 +85,9 @@ const courseInfo = {
 };
 
 const getCourseKeys = (obj) => {
-	// Solution code here...
+	return Object.keys(obj)
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -92,7 +98,7 @@ Write a function named checkValues that takes in an object and a value and retur
 ------------------------------------------------------------------------------------------------ */
 
 const checkValues = (obj, value) => {
-	// Solution code here...
+	return Object.values(obj).indexOf(value) > -1;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -115,7 +121,8 @@ HR has asked you to change the data to make it easier to print so that it looks 
 ------------------------------------------------------------------------------------------------ */
 
 const updateNumbers = (obj) => {
-	// Solution code here...
+	const arr = []
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -126,7 +133,10 @@ Write a function named getHouses that returns a new array containing the names o
 
 const getHouses = (arr) => {
 	let houses = [];
-	// Solution code here...
+	arr.forEach((ele) => {
+		houses.push(ele.house)
+	})
+	return houses
 };
 
 /*------------------------------------------------------------------------------------------------

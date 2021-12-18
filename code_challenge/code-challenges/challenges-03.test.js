@@ -22,7 +22,11 @@ function lower(str) {
 }
 
 const updateAnimal = (arr, callback) => {
-  // Solution code here...
+  const arr2 = []
+  arr.map((callback) => {
+
+  });
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -144,8 +148,12 @@ For example, [1, 14, 0.2, -281, 54782] is only correctly sorted in that order.
 ------------------------------------------------------------------------------------------------ */
 
 const sortNumbersByLength = (arr) => {
-  // Solution code here...
-};
+  return arr.sort((a,r) => {
+    if(a.toString().length !== r.toString().length) {
+      return a.toString().length - r.toString().length;
+    }
+  })
+}
 
 /*-----------------------------------------------------------------------------------------------
 CHALLENGE 10 - Stretch Goal
@@ -222,7 +230,11 @@ const meetings = [
 ];
 
 const sortMeetingsByDay = (arr) => {
-  // Solution code here...
+  const days = { Sunday: 1, Monday: 2, Tuesday: 3, Wednesday: 4, Thursday: 5, Friday: 6, Saturday: 7 };
+  
+  return arr.sort((a,r) => {
+    return days[a.dayOfWeek] - days[r.dayOfWeek]
+  })
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -236,7 +248,9 @@ You DO NOT need to use your solution to Challenge 9 in completing Challenge 10.
 ------------------------------------------------------------------------------------------------ */
 
 const sortSchedule = (arr) => {
-  // Solution code here...
+ return sortMeetingsByDay(arr).sort((a,r) => {
+   
+ })
 };
 
 /* ------------------------------------------------------------------------------------------------

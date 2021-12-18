@@ -42,9 +42,10 @@ For example:
 ------------------------------------------------------------------------------------------------ */
 
 const isNum = (input) => {
-  // Solution code here...
-};
+  const regex = /\d/;
+  return regex.test(input)
 
+}
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
@@ -66,9 +67,14 @@ Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
 const isCapitalized = (str) => {
-  // if(str.match(/\b[A-Z].*?\b/g)
-   
-  };
+  let words = []
+  if(str.match(/\b[A-Z].*?\b/g)) {
+    words = str.match(/\b[A-Z].*?\b/g)
+  } else {
+    words = []
+  }
+  return words
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -112,7 +118,13 @@ The expected output of "Hello, and have a wonderful day!" is ["and ", "have ", "
 ------------------------------------------------------------------------------------------------ */
 
 const noPunctuation = (str) => {
-  // Solution code here...
+  let words = []
+  if(str.match(/[A-Z-a-z-0-9]+ /gi)) {
+    words = str.match(/[A-Z-a-z-0-9]+ /gi)
+  } else {
+    words = []
+  }
+  return words
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -128,7 +140,8 @@ For example, 'Welcome to Code 301!' will return 'W_lc_m_ t_ C_d_ 301!'.
 ------------------------------------------------------------------------------------------------ */
 
 let hangman = (str) => {
-  // Solution code here...
+ const vowels = /[aeiou]/gi
+ return str.replace(vowels, "_")
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -145,7 +158,14 @@ const seashells =
   "She sells seashells by the seashore. The shells she sells are surely seashells. So if she sells shells on the seashore, I'm sure she sells seashore shells.";
 
 const findShells = (str) => {
-  // Solution code here...
+  let words = []
+  if(str.match(/\b(\w*ells)\b/g)) {
+    words = str.match(/\b(\w*ells)\b/g)
+  } else {
+    words = []
+  }
+  return words
+
 };
 
 /* ------------------------------------------------------------------------------------------------
